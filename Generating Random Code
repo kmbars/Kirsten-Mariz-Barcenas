@@ -1,0 +1,18 @@
+package com.company;
+
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Integer min = 1;
+        Integer max = 75;
+
+        Integer randCode = 1;
+
+        while(randCode != 59){
+            randCode = Integer.valueOf((int)(Math.random() * ((max - min) + 1))+ min) ;
+            System.out.println("Number: " + randCode.toString()); // + for concatenation
+        }
+    }
+}
