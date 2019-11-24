@@ -1,0 +1,27 @@
+public class Main
+{
+	public static void main(String[] args) {
+		if(username.length() >= 8){
+   if(username.equals("fcpcstudent1")){
+       if(password.length() >= 8){
+           if(password.equals("studentfcpc@2019")){
+               System.out.println("Login Successful!");
+           }
+           else{
+               System.out.println("Incorrect password");
+           }
+       }
+       else{
+           System.out.println("Insufficient length.");
+   
+   else{
+       System.out.println("Incorrect username.");
+   }
+
+}
+else{
+   System.out.println("Username insufficient length.");
+}
+
+
+}
