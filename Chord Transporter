@@ -1,0 +1,74 @@
+//Part1
+import jdk.nashorn.internal.runtime.regexp.joni.ScanEnvironment;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Chords: " );
+        String chord = sc.nextLine();
+        System.out.print("Enter # of shifts: ");
+        Integer shift = sc.nextInt();
+
+        String arr[] = chord.split(" ");
+
+        Chord cc = new Chord(chord, shift);
+
+        for (int x = 0; x < arr.length; x++){
+            Chord xx = new Chord(arr[x], shift);
+            System.out.println("Transpose Chord: " + arr[x] + " to " + xx.transposeChord());
+        }
+
+    }
+}
+
+//Part2
+
+package com.company;
+
+public class Chord {
+
+    private String CHORD;
+    private Integer SHIFT;
+
+    public String [] CHORDS = {"C","C#","D","D#","E","F","F#","G","G#","A","Bb","C"};
+
+    public Chord(String chord, Integer shift){
+        this.CHORD = chord;
+        this.SHIFT = shift;
+
+    }
+
+    public String transposeChord(){
+
+        Integer indexChord = searchChord();
+        Integer shiftVal = indexChord + this.SHIFT;
+
+        if(shiftVal < this.CHORDS.length){
+            return this.CHORDS[shiftVal];
+        }
+        else{
+            return this.CHORDS[shiftVal%this.CHORDS.length];
+        }
+
+    }
+
+    private Integer searchChord(){
+
+        int index = -1;
+
+        for(int i = 0; i < this.CHORDS.length; i++){
+            if(this.CHORD.equalsIgnoreCase(this.CHORDS[i])){
+                index = i;
+                break;
+            }
+        }
+        return index;
+
+    }
+
+}
