@@ -1,0 +1,32 @@
+//ITEMLIST
+package cashregisterproject;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ItemList {
+    
+    public String[] item_name = {"Ventos","Icloud","DeadWoods","Vapor","Bliss","CloudCheck","SirJack","KingKong","NicoDrops","MentholDrops",
+        "Frosty","Neneng Gata","Joker","Funta","Fog","CloudNerds","PAPASmurfs","TicToc","VapeWild","SlushyMan"};
+    
+    public Double[] item_price = {150d,120d,130d,140d,160d,170d,180d,190d,200d,220d,
+                                  60d,90d,250d,300d,280d,50d,70d,80d,350d,230d,100d,};
+    
+    private List<Item> items;
+    private final ArrayList Item;
+    
+    public ItemList(){
+        this.Item = new ArrayList();
+          
+    }
+    
+    public List<Item> getItem(){
+        for(int x=0; x<item_name.length;x++){
+            this.Item.add(new Item(item_name[x],item_price[x]));
+        }
+        return this.Item;
+            
+    }
+    
+    
+    
+}
