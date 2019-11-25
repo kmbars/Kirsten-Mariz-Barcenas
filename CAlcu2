@@ -1,0 +1,26 @@
+package javaapplication3;
+
+/**
+ *
+ * @author LAB3
+ */
+public class JavaApplication3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Calculator cal = new Calculator(19,17);
+        
+        System.out.println(cal.addNumber());
+        System.out.println(cal.mulNumber());
+        System.out.println(cal.divNumber());
+        System.out.println(cal.difNumber());
+        System.out.println(cal.modNumber());
+        System.out.println(cal.addNumber(100,120));
+        
+        
+        
+    }
+    }
