@@ -1,0 +1,33 @@
+//TRANSACTION
+
+package cashregisterproject;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ *
+ * @author LAB3
+ */
+public class Transaction {
+    
+    private List <Item> transaction; 
+    
+    public Transaction(){
+        this.transaction = new ArrayList<>();
+    }
+    
+    public void addItem(Item transac){
+        transaction.add(transac);
+    }
+    
+    public Double getFinalPrice(){
+        Double finPrice = 0d;
+        
+        for(int x =0; x<transaction.size();x++ ){
+            finPrice += transaction.get(x).getPrice();
+        }
+        return finPrice;
+    }
+    public List<Item> getAllItems(){
+        return this.transaction;
+    }
+}
