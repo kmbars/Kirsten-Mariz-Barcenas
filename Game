@@ -1,0 +1,92 @@
+package com.company;
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rd = new Random();
+        System.out.println("This Game is for Children only");
+        System.out.println("1.Rock\n2.Paper\n3.Scissor\n4.Lizard\n5.Spock\nEnter choice: ");
+        int AI = rd.nextInt(3);
+        int choice = sc.nextInt();
+
+        if(AI == 1){
+            AI = 1;
+        }else if(AI == 2){
+            AI = 2;
+        }else if(AI == 3){
+            AI = 3;
+        }else if(AI == 4){
+            AI = 4;
+        }else if(AI == 5){
+            AI = 5;
+        }
+
+        if(choice == 1){
+            System.out.println("Rock!");
+        }else if(choice == 2){
+            System.out.println("Scissor");
+        }else if(choice == 3){
+            System.out.println("Paper");
+        }else if(choice == 4){
+            System.out.println("Lizard");
+        }else if(choice == 5){
+            System.out.println("Spock");
+        }else{
+            System.out.println("EKIS");
+        }
+
+        if(choice == AI){
+            System.out.println("Draw");
+        }else if(choice == 1 && AI == 2){
+            System.out.println("Computer Win!!\nPAPER cover ROCK!!");
+        }else if(choice == 1 && AI == 3){
+            System.out.println("You Win!!\nROCK crushes SCISSOR");
+        }
+        else if(choice == 1 && AI == 4){
+            System.out.println("You Win!!\nROCK crushes LIZARD");
+        }
+        else if(choice == 1 && AI == 5){
+            System.out.println("Computer Win!!\nSPOCK vaporize ROCK!");
+        }else if(choice == 2 && AI == 1){
+            System.out.println("You Win!!\nPAPER cover ROCK");
+        }else if(choice == 2 && AI == 3){
+            System.out.println("Computer Win!!\nSCISSOR cuts PAPER");
+        }else if(choice == 2 && AI == 4){
+            System.out.println("Computer Win!!\nLIZARD eats PAPER");
+        }else if(choice == 2 && AI == 5){
+            System.out.println("You Win!!\nPaper disproves Spock");
+        }else if(choice == 3 && AI == 1){
+            System.out.println("Computer Win!!\nROCK crushes SCISSOR");
+        }else if(choice == 3 && AI == 2){
+            System.out.println("You Win!!\nSCISSOR cuts PAPER");
+        }else if(choice == 3 && AI == 4){
+            System.out.println("You Win!!\nSCISSOR decapitates LIZARD");
+        }else if(choice == 3 && AI == 5){
+            System.out.println("Computer Wins!!\nSPOCK smashes SCISSOR");
+        }else if(choice == 4 && AI == 1){
+            System.out.println("Computer Wins!!\nROCK crushes LIZARD");
+        }else if(choice == 4 && AI == 2){
+            System.out.println("You Win!!\nLIZARD eats PAPER");
+        }else if(choice == 4 && AI == 3){
+            System.out.println("Computer Win!!\nSCISSOR decapitates LIZARD");
+        }else if(choice == 4 && AI == 5){
+            System.out.println("You Win!!\nLIZARD poison SPOCK");
+        }else if(choice == 5 && AI == 1){
+            System.out.println("You Win!!\nSPOCK vaporizes ROCK");
+        }
+        else if(choice == 5 && AI == 2){
+            System.out.println("Computer Win!!\nPAPER disproves SPOCK");
+        }
+        else if(choice == 5 && AI == 3){
+            System.out.println("You Win!!\nSPOCK smashes SCISSOR");
+        }else if(choice == 5 && AI == 4){
+            System.out.println("Computer Win!!LIZARD poison SPOCK");
+        }
+
+
+
+    }
+    }
