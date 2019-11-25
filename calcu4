@@ -1,0 +1,19 @@
+package javaapplication3;
+
+
+public class TransfereeOBject extends StudentObject {
+    
+   public TransfereeOBject(){
+       super();
+   }
+   
+   public void changeName(String name){
+       this.NAME = name;
+   }
+   public void changeAge(Integer age){
+       this.AGE = age;
+   }
+   public void changeSection(String section){
+       this.SECTION = section;
+   }
+}
