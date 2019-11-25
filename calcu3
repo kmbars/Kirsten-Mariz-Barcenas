@@ -1,0 +1,13 @@
+package javaapplication3;
+
+
+public class StudentObject {
+    public StudentObject(){
+        System.out.println("Default class constructor");
+    }
+    //class attribute
+    public String NAME;
+    public String SECTION;
+    public Integer AGE;
+    
+}
