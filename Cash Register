@@ -1,0 +1,61 @@
+//MAIN
+public class CashRegisterProject {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        ItemList il = new ItemList();
+        Transaction trans = new Transaction();
+        
+        List<Item> allItem = il.getItem();
+        
+        Integer count = 1;
+        for(int y =0; y<allItem.size(); y++){
+            System.out.println(count.toString() + "." + allItem.get(y).getName()
+                    + '\t' + allItem.get(y).getPrice().toString());
+            count++;
+        }
+        
+        Integer choice = 0;
+        
+        while(choice!=99){
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+            
+            if (choice >= 1 && choice <= allItem.size() +1){
+                Item selItem =allItem.get(choice-1);
+                trans.addItem(selItem);             
+                System.out.println("Added item: " + selItem.getName()+ "|"
+                        + selItem.getPrice().toString());
+            }
+            else if (choice == 99){
+                System.out.println("Item selection ended.");
+            }
+            else{
+                System.out.println("Item selected not on the list");
+            }
+        }
+        System.out.println("Items Selected");
+        List<Item>allSelectedItem = trans.getAllItems();
+        Integer selCount = 1;
+        
+        for(int z = 0; z<allSelectedItem.size();z++){
+            System.out.println(selCount.toString() + "."
+            +allSelectedItem.get(z).getName()
+            + '\t' + allSelectedItem.get(z).getPrice().toString());
+          selCount++;  
+        }
+        System.out.println("Total Price: " + trans.getFinalPrice().toString());
+        Double finPriceTender = trans.getFinalPrice();
+        
+        System.out.println("Enter cash: ");
+        Double cashVal = sc.nextDouble();
+        Double change = cashVal - finPriceTender;
+        
+        System.out.println("Amount tendered: " + cashVal.toString());
+        System.out.println("Change: " + change.toString());
+    }
+    
